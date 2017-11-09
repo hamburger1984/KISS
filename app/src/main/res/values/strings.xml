@@ -63,7 +63,7 @@
     <string name="keyboard_name">Display keyboard on start</string>
     <string name="keyboard_workaround_name">Keyboard suggestions fix</string>
     <string name="keyboard_workaround_desc">Prevent broken soft-keyboards (like SwiftKey™) from showing suggestions</string>
-    <string name="history_hide_desc">Hide history and intro screen</string>
+    <string name="history_hide_desc">Hide history and intro screen, enable widgets</string>
     <string name="history_hide_name">Minimalistic UI</string>
     <string name="history_onclick_name">Show history on touch</string>
     <string name="portrait_title">Force portrait mode</string>
@@ -179,5 +179,13 @@
     <string name="color_swatch_description">Color <xliff:g id="color_index" example="14">%1$d</xliff:g></string>
     <!-- Content description for a selected color square. -->
     <string name="color_swatch_description_selected">Color <xliff:g id="color_index" example="14">%1$d</xliff:g> selected</string>
+
+    <string name="transparent_search_bar">Transparent search bar</string>
+    <string name="transparent_favorites_bar">Transparent favorites bar</string>
+
     <string name="large_search_bar">Large search bar</string>
+    <!-- Widget strings, preference id should not be translated -->
+    <string name="menu_widget_add">(BETA) Add widget</string>
+    <string name="menu_widget_remove">Remove widget</string>
+
 </resources>
