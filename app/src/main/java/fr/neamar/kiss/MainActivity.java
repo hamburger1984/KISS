@@ -574,6 +574,7 @@ public class MainActivity extends Activity implements QueryInterface, KeyboardSc
         }
         searchEditLayout.getLayoutParams().height = searchHeight;
         kissBar.getLayoutParams().height = searchHeight;
+        favoritesKissBar.getLayoutParams().height = searchHeight;
 
         //Show favorites above search field ONLY if AppProvider is already loaded
         //Otherwise this will get triggered by the broadcastreceiver in the onCreate
@@ -747,7 +748,7 @@ public class MainActivity extends Activity implements QueryInterface, KeyboardSc
                     //if list is empty
                     if ((this.list.getAdapter() == null) || (this.list.getAdapter().getCount() == 0)) {
                         searcher = new HistorySearcher(MainActivity.this);
-                        searcher.execute();
+                        searcher.executeOnExecutor( Searcher.SEARCH_THREAD );
                     }
                 }
             }
@@ -860,7 +861,7 @@ public class MainActivity extends Activity implements QueryInterface, KeyboardSc
                 searcher.cancel(true);
             }
             searcher = new ApplicationsSearcher(MainActivity.this);
-            searcher.execute();
+            searcher.executeOnExecutor( Searcher.SEARCH_THREAD );
 
             // Reveal the bar
             if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -996,7 +997,7 @@ public class MainActivity extends Activity implements QueryInterface, KeyboardSc
         } else {
             searcher = new QuerySearcher(this, query);
         }
-        searcher.execute();
+        searcher.executeOnExecutor( Searcher.SEARCH_THREAD );
         displayQuickFavoritesBar(false, false);
     }
 
